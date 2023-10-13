@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {console} from "forge-std/console.sol";
-import {ScriptUtils} from "script/utils/ScriptUtils.sol";
+import {ScriptUtils} from "lib/protocol-ops/script/ScriptUtils.sol";
 import {Safe} from "contracts/Safe.sol";
 import {GuardManager} from "contracts/base/GuardManager.sol";
 import {ModuleManager} from "contracts/base/ModuleManager.sol";

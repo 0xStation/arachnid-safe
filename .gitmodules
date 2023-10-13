@@ -4,3 +4,6 @@
 [submodule "lib/openzeppelin-contracts"]
 	path = lib/openzeppelin-contracts
 	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+[submodule "lib/protocol-ops"]
+	path = lib/protocol-ops
+	url = git@github.com:0xStation/Protocol-Ops.git

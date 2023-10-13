@@ -6,11 +6,9 @@ import {Safe} from "contracts/Safe.sol";
 import {SafeProxyFactory} from "contracts/proxies/SafeProxyFactory.sol";
 import {SafeProxy} from "contracts/proxies/SafeProxy.sol";
 
-contract DeployScript is ScriptUtils {
+contract DeployFounderSafeProxyScript is ScriptUtils {
 
     // following contracts will be deployed:
-    Safe public safeImpl;
-    SafeProxyFactory public safeProxyFactory;
     SafeProxy public proxy;
 
     function run() public {
@@ -19,8 +17,8 @@ contract DeployScript is ScriptUtils {
         string memory saltString = ScriptUtils.readSalt("salt"); // "GroupOS"
         bytes32 salt = bytes32(bytes(saltString));
 
-        safeImpl = new Safe{salt: salt}(); // -> 0x4aecEDCb5A1DD4615F57dF2672D5399b843F2469
-        safeProxyFactory = new SafeProxyFactory{salt: salt}(); // -> 0x17841bb20729B25F23FdC6307dbCCd883Ad30f91
+        Safe safeImpl = Safe(payable(ScriptUtils.stationSafeImpl)); // -> 0x4aecEDCb5A1DD4615F57dF2672D5399b843F2469
+        SafeProxyFactory safeProxyFactory = SafeProxyFactory(payable(ScriptUtils.stationSafeFactory)); // -> 0x17841bb20729B25F23FdC6307dbCCd883Ad30f91
 
         // deploy the first multisig proxy
         address[] memory owners = new address[](3);
