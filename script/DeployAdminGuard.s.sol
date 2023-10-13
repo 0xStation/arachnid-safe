@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import {ScriptUtils} from "script/utils/ScriptUtils.sol";
+import {ScriptUtils} from "lib/protocol-ops/script/ScriptUtils.sol";
 import {AdminGuard} from "contracts/examples/guards/AdminGuard.sol";
 
 contract DeployAdminGuardScript is ScriptUtils {

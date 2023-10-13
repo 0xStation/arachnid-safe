@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import {ScriptUtils} from "script/utils/ScriptUtils.sol";
+import {ScriptUtils} from "lib/protocol-ops/script/ScriptUtils.sol";
 import {Safe} from "contracts/Safe.sol";
 import {SafeProxyFactory} from "contracts/proxies/SafeProxyFactory.sol";
 import {SafeProxy} from "contracts/proxies/SafeProxy.sol";
