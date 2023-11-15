@@ -70,12 +70,14 @@ contract AdminGuard is BaseGuard {
         // get sensitive state which should not be mutated by modules using public functions wherever possible and `getStorageAt()` when not
         address singleton = address(uint160(uint256(bytes32(StorageAccessible(msg.sender).getStorageAt(0, 1)))));
 
-        bytes32 fallbackHandlerSlot = keccak256("fallback_manager.handler.address");
+        // keccak256("fallback_manager.handler.address");
+        bytes32 fallbackHandlerSlot = 0x6c9a6c4a39284e37ed1cf53d337577d14212a4870fb976a4366c693b939918d5;
         address fallbackHandler = address(
             uint160(uint256(bytes32(StorageAccessible(msg.sender).getStorageAt(uint256(fallbackHandlerSlot), 1))))
         );
 
-        bytes32 guardStorageSlot = keccak256("guard_manager.guard.address");
+        // keccak256("guard_manager.guard.address");
+        bytes32 guardStorageSlot = 0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8;
         address guard =
             address(uint160(uint256(bytes32(StorageAccessible(msg.sender).getStorageAt(uint256(guardStorageSlot), 1)))));
 
