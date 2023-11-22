@@ -39,7 +39,7 @@ contract ExecuteTxScript is ScriptUtils {
         // Call3 array formatting
         bytes memory addAdminGuardData = abi.encodeWithSelector(GuardManager.setGuard.selector, address(adminGuard));
         bytes memory addModule1Data = abi.encodeWithSelector(ModuleManager.enableModule.selector, ScriptUtils.symmetry);
-        bytes memory addModule2Data = abi.encodeWithSelector(ModuleManager.enableModule.selector, ScriptUtils.robriks2);
+        bytes memory addModule2Data = abi.encodeWithSelector(ModuleManager.enableModule.selector, ScriptUtils.robriks);
         Call3 memory addAdminGuardCall =
             Call3({target: ScriptUtils.stationFounderSafe, allowFailure: false, callData: addAdminGuardData});
         Call3 memory addModule1Call =
